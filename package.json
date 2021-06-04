@@ -7,6 +7,13 @@
   "license": "MIT",
   "scripts": {
     "start": "node src/App/index.js",
-    "test": ""
+    "test": "mocha test/block.test.js"
+  },
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.4.0"
+  },
+  "dependencies": {
+    "crypto-js": "^4.0.0"
   }
 }
