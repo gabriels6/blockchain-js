@@ -1,0 +1,12 @@
+{
+  "name": "blockchain-project-js",
+  "version": "1.0.0",
+  "description": "Blockchain implementation in JS project",
+  "main": "index.js",
+  "author": "Gabriel Gomes",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/App/index.js",
+    "test": ""
+  }
+}
