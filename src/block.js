@@ -2,7 +2,7 @@ const {calculateHash} = require('./hash');
 
 class Block {
     constructor(index = 0, timestamp, data, difficulty,previousHash) {
-        this.index = index ;
+        this.index = index;
         this.timestamp = timestamp;
         this.data = data;
         this.hash = calculateHash(index + timestamp + data + previousHash);
@@ -12,11 +12,12 @@ class Block {
 
     async mine(){
 
-        if(this.hash.substring(0,this.difficulty) === new Array(this.difficulty + 1).join("0")){
-            return{
+        if(this.hash.substring(0,this.difficulty) === Array(this.difficulty + 1).join("0")){
+
+            return ({
                 nonce: this.index,
                 solution: this.hash
-            }
+            })
         }
 
         this.index++

@@ -48,9 +48,11 @@ describe('Block class tests', () => {
         
         describe('Block "newBlock" has been created and mining has been done',  () => {
 
-            it('Should return mining function a nonce higher than 0', async () => {
-    
+            before(async () => {
                 await newBlock.mine();
+            });
+
+            it('Should return mining function a nonce higher than 0', () => {
 
                 expect(newBlock.index).not.to.be.lessThan(0);
 
