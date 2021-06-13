@@ -6,7 +6,7 @@
   "author": "Gabriel Gomes",
   "license": "MIT",
   "scripts": {
-    "start": "node src/App/index.js",
+    "start": "node src/index.js",
     "test": "mocha test/block.test.js"
   },
   "devDependencies": {
