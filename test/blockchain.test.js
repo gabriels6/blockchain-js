@@ -7,7 +7,7 @@ describe('Blockchain Class Tests', () => {
 
         const testBlockChain = new BlockChain();
 
-        const nowDate = Date.now();
+        const nowDate = '2021-06-12T19:37:31Z';
 
         const testBlock = new Block(0,nowDate,'Investtools is a very nice company to do internship.',3);
 
@@ -23,6 +23,10 @@ describe('Blockchain Class Tests', () => {
 
                 it('Should return a Proof of work higher than  0', async () => {
                     expect(await testBlockChain.verifyPoW()).to.be.above(0);
+                });
+
+                it('Should return the last block.data as "Coffee is tasty"', () => {
+                    expect(testBlockChain.getLastBlock().data).to.be.eq('Coffee is tasty');
                 });
 
         });
