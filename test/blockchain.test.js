@@ -5,15 +5,21 @@ const expect = require('chai').expect;
 describe('Blockchain Class Tests', () => {
     context('Blockchain should have been created', () => {
 
-        const testBlockChain = new BlockChain();
+        let testBlockChain;
+        let nowDate;
+        let testBlock;
 
-        const nowDate = '2021-06-12T19:37:31Z';
+        before(() => {
+            testBlockChain = new BlockChain();
 
-        const testBlock = new Block(0,nowDate,'Investtools is a very nice company to do internship.',3);
+            nowDate = '2021-06-12T19:37:31Z';
+
+            testBlock = new Block(0,nowDate,'Investtools is a very nice company to do internship.',3);
 
 
-        testBlockChain.addBlock(testBlock);
-        testBlockChain.addBlock(new Block(0,nowDate,'Coffee is tasty',1,testBlockChain.getLastBlock()));
+            testBlockChain.addBlock(testBlock);
+            testBlockChain.addBlock(new Block(0,nowDate,'Coffee is tasty',1,testBlockChain.getLastBlock()));
+        });
 
         context('Blockchain should work as intended', () => {
                 
