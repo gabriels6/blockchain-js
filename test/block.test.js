@@ -5,12 +5,15 @@ const Block = require('../src/block');
 describe('Block class tests', () => {
     context('Block "newBlock" has been created', () => {
 
-        const timeStamp = Date.now();
-        const message = "I like coffee";
-        const nonce = 0;
+        let newBlock;
 
-        
-        const newBlock = new Block(nonce,timeStamp,message,3);
+        before(() =>{
+            const timeStamp = Date.now();
+            const message = "I like coffee";
+            const nonce = 0;
+
+            newBlock = new Block(nonce,timeStamp,message,2);
+        });
 
         describe('Block should be instantiated as newBlock', () => {
 
@@ -32,9 +35,9 @@ describe('Block class tests', () => {
     
             });
 
-            it('Should contain a difficulty equal to 3', () => {
+            it('Should contain a difficulty equal to 2', () => {
                 
-                expect(newBlock.difficulty).to.be.eq(3);
+                expect(newBlock.difficulty).to.be.eq(2);
 
             });
 
